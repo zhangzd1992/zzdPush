@@ -32,6 +32,7 @@ public class LivePusher {
      */
     public void startLive(String path) {
         native_start(path);
+        videoChannel.startLive();
     }
 
     public native void native_init();
@@ -46,4 +47,11 @@ public class LivePusher {
     public native void native_setVideoEncInfo(int width, int height, int fps, int bitrate);
     public native void native_start(String path);
 
+    /**
+     * 推送数据流
+     * @param data
+     */
+    public native void native_pushVideo(byte[] data);
+
+    public native void stopLive();
 }

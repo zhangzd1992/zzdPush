@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         surfaceView = findViewById(R.id.surfaceView);
-        livePusher = new LivePusher(this, 1920, 1080, 800_000, 10, Camera.CameraInfo.CAMERA_FACING_BACK);
+        livePusher = new LivePusher(this, 800, 400, 800_000, 10, Camera.CameraInfo.CAMERA_FACING_BACK);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this,permissions[0]) == PackageManager.PERMISSION_DENIED) {
@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startLive(View view) {
-        livePusher.startLive("");
+        livePusher.startLive("rtmp://47.244.235.32/myapp");
     }
 
     public void stopLive(View view) {
+        livePusher.stopLive();
     }
 
     @Override
