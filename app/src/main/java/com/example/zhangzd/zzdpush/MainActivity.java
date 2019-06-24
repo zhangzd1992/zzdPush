@@ -13,6 +13,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private LivePusher livePusher;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startLive(View view) {
-        livePusher.startLive("rtmp://47.244.235.32/myapp");
+        livePusher.startLive("z");
     }
 
     public void stopLive(View view) {

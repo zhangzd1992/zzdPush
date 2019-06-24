@@ -33,9 +33,17 @@ public class LivePusher {
     public void startLive(String path) {
         native_start(path);
         videoChannel.startLive();
+        audioChannel.startLive();
+    }
+
+
+    public long getInputSamples(){
+       return native_getInputSamples();
     }
 
     public native void native_init();
+
+
 
     /**
      * 设置视频编码参数
@@ -54,4 +62,8 @@ public class LivePusher {
     public native void native_pushVideo(byte[] data);
 
     public native void stopLive();
+
+    public native void native_pushAudio(byte[] data);
+    public native void native_setaudioEncInfo(int sampleRateInHz,int channels);
+    public native long native_getInputSamples();
 }
